@@ -26,6 +26,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "history": "^4.7.2",
     "redux-devtools": "^3.4.2"
   }
 }
