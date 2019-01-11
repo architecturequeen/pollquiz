@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Home from './Home';
+import HomeContainer from './HomeContainer';
 
 class Login extends Component {
   state = {
@@ -17,17 +17,14 @@ class Login extends Component {
   };
 
   handleLogin = event => {
-    console.log(this.selectedUser.value);
     this.props.login(this.selectedUser.value);
     this.props.history.push('/');
   };
 
   render() {
-    console.log(this.props);
     const { users, loggedInUser } = this.props;
-
     return loggedInUser !== null ? (
-      <Home />
+      <HomeContainer />
     ) : (
       <div>
         <p>Login to Poll App!</p>
