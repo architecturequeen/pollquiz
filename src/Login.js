@@ -18,7 +18,6 @@ class Login extends Component {
 
   handleLogin = event => {
     this.props.login(this.selectedUser.value);
-    this.props.history.push('/');
   };
 
   render() {

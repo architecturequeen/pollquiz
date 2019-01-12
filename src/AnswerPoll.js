@@ -20,7 +20,7 @@ class AnswerPoll extends Component {
     this.setState({ value: event.target.value });
   };
   render() {
-    const { author, optionOne, optionTwo, avatar, users } = this.props;
+    const { author, optionOne, optionTwo, avatar } = this.props;
     return (
       <div>
         <div> {author} asks</div>

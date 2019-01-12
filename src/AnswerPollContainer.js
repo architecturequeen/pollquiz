@@ -16,18 +16,23 @@ class AnswerPollContainer extends Component {
   render() {
     const { loggedInUser, questions, users, submitAnswer } = this.props;
     const quID = this.props.match.params.id;
-    return (
-      <AnswerPoll
-        author={questions[quID].author}
-        questionID={quID}
-        user={loggedInUser}
-        optionOne={questions[quID].optionOne.text}
-        optionTwo={questions[quID].optionTwo.text}
-        avatar={users[questions[quID].author].avatarURL}
-        users={users}
-        submitAnswer={submitAnswer}
-      />
-    );
+
+    if (!questions[quID]) return <p>Ooops! 404 This poll can't be found</p>;
+
+    if (questions && questions[quID]) {
+      return (
+        <AnswerPoll
+          author={questions[quID].author}
+          questionID={quID}
+          user={loggedInUser}
+          optionOne={questions[quID].optionOne.text}
+          optionTwo={questions[quID].optionTwo.text}
+          avatar={users[questions[quID].author].avatarURL}
+          users={users}
+          submitAnswer={submitAnswer}
+        />
+      );
+    }
   }
 }
 
